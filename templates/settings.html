@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="glass-card shadow-lg">
+            <h3 class="fw-bold mb-3 text-dark">Screen4：修改密碼</h3>
+            <p class="text-muted mb-4">輸入舊密碼與新密碼後更新帳號設定，流程對應 PDF 的 Screen4。</p>
+            
+            <form action="/update_password" method="POST">
+                <div class="mb-3 text-start">
+                    <label class="fw-bold mb-2">舊密碼</label>
+                    <input type="password" name="old_password" class="form-control" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="fw-bold mb-2">新密碼</label>
+                    <input type="password" name="new_password" class="form-control" required>
+                </div>
+                <div class="mb-4 text-start">
+                    <label class="fw-bold mb-2">確認新密碼</label>
+                    <input type="password" name="confirm_password" class="form-control" required>
+                </div>
+                
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn-main py-2 px-4">更新密碼</button>
+                    <a href="/board" class="btn btn-light border py-2 px-4 text-dark">回留言板</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-main {
+        background-color: #2d6a4f; /* 使用你喜歡的鼠尾草綠或深綠色 */
+        color: white;
+        border: none;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+    .btn-main:hover { background-color: #1b4332; }
+</style>
+{% endblock %}
